@@ -1,0 +1,128 @@
+plugins {
+  id "org.openbakery.xcode-plugin" version "0.12.2"
+}
+
+//
+def languages = ['de', 'en']
+
+// destination directory where the screenshots are stored
+def screenshotOutputPath = new File("build/screenshots")
+
+// the scheme that should be used for creating the screenshots
+def schemeFile = "HotShots.xcodeproj/xcshareddata/xcschemes/Screenshots.xcscheme"
+
+// the simulator version that should be used
+def simulatorOS = '9.*'
+
+
+xcodebuild {
+	version = "7" // use xcode version 7.+. This parameter is only needed if multiple xcodes are installed on your machine, otherwise this parameter is not needed
+	target = 'HotShots'
+}
+
+
+// this modifieds the scheme and adds the language parameter so that the simulator starts using the proper language
+languages.each { language ->
+	task "screenshots-$language" (type:  org.openbakery.XcodeTestTask) {
+	
+		doFirst { 
+	   	println "Create Screenshots for $language"
+	   	println "Store screenshots into $screenshotOutputPath"
+			
+			screenshotOutputPath.mkdirs()
+	
+			// modify the schema and set the simulator language
+			def xml = new XmlParser().parse(schemeFile)
+			def commandLineArguments = xml.LaunchAction[0].CommandLineArguments[0]
+			if (commandLineArguments != null) {
+				def parent = commandLineArguments.parent()
+				parent.remove(commandLineArguments)
+			}
+			commandLineArguments = new Node(xml.LaunchAction[0], 'CommandLineArguments')
+			new Node(commandLineArguments, 'CommandLineArgument', [argument:"-AppleLanguages", isEnabled:"YES"])
+			new Node(commandLineArguments, 'CommandLineArgument', [argument:"(" + language + ")", isEnabled:"YES"])
+			
+
+			def environmentVariables = xml.LaunchAction[0].EnvironmentVariables[0]
+			if (environmentVariables != null) {
+				def parent = environmentVariables.parent()
+				parent.remove(environmentVariables)
+			}
+			
+			environmentVariables = new Node(xml.LaunchAction[0], 'EnvironmentVariables')
+			new Node(environmentVariables, 'EnvironmentVariable', [key:"OUTPUT_PATH", value:screenshotOutputPath.absolutePath, isEnabled:"YES"])
+			
+			new XmlNodePrinter(new PrintWriter(new FileWriter(schemeFile))).print(xml)
+		}
+	}
+}
+
+
+
+task allScreenshots {
+	description 'Runs the unit tests that create the screenshots in all specified simulators and languges'
+	
+	languages.each { language ->
+		dependsOn "screenshots-$language"
+	}
+	
+	doFirst {
+		println "Creating all screenshots"
+	}
+}
+
+
+// here dynamic task are created for every language. e.g screenshot-de that runs the unit test in german
+gradle.taskGraph.whenReady { taskGraph ->
+
+	languages.each { language ->
+		Task task = project.tasks.findByName("screenshots-$language")
+		if (taskGraph.hasTask(task)) {
+
+			println "Configure Screenshots: $language"
+			xcodebuild {
+				scheme = 'Screenshots'
+				
+				destination {
+					platform = 'iOS Simulator'
+					name = 'iPad Pro'
+					os = simulatorOS
+				}
+				
+				destination {
+					platform = 'iOS Simulator'
+					name = 'iPad Retina'
+					os = simulatorOS
+				}
+
+				destination {
+					platform = 'iOS Simulator'
+					name = 'iPhone 4s'
+					os = simulatorOS
+				}
+
+				destination {
+					platform = 'iOS Simulator'
+					name = 'iPhone 5s'
+					os = simulatorOS
+				}
+
+				destination {
+					platform = 'iOS Simulator'
+					name = 'iPhone 6'
+					os = simulatorOS
+				}
+				destination {
+					platform = 'iOS Simulator'
+					name = 'iPhone 6 Plus'
+					os = simulatorOS
+				}
+			
+			}
+		}
+	}
+	
+}
+
+
+
