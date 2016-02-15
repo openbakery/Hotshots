@@ -1,0 +1,193 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
+    classpath "gradle.plugin.org.openbakery:xcode-plugin:0.12.7"
+  }
+}
+
+if (!project.hasProperty('screenshotsOutputPath')) {
+  ext.screenshotsOutputPath = new File("build/screenshots")
+}
+
+if (!project.hasProperty('screenshotsLanguages')) {
+	 ext.screenshotsLanguages = ['en'] 
+}
+
+if (!project.hasProperty('screenshotsSchemeFile')) {
+	ext.screenshotsSchemeFile = null
+}
+
+import org.gradle.logging.StyledTextOutput;
+import org.gradle.logging.StyledTextOutputFactory;
+import static org.gradle.logging.StyledTextOutput.Style;
+
+System.setProperty('org.gradle.color.error', 'RED')
+
+
+// this modifieds the scheme and adds the language parameter so that the simulator starts using the proper language
+screenshotsLanguages.each { language ->
+	task "simulatorScreenshots-$language" (type: org.openbakery.XcodeTestTask) {
+
+
+		doFirst { 
+	    xcodebuild {
+	      scheme = org.apache.commons.io.FilenameUtils.getBaseName(screenshotsSchemeFile) 
+				destination = [ 'iPad Pro', 'iPad Retina', 'iPhone 4s', 'iPhone 5s', 'iPhone 6', 'iPhone 6 Plus' ]
+			}
+			
+			if (screenshotsSchemeFile == null) {
+			  logger.error("ERROR You need to define the screenshotsSchemeFile property")
+			}
+			
+	   	println "Create Screenshots for $language"
+	   	println "Store screenshots into $screenshotsOutputPath"
+			
+			screenshotsOutputPath.mkdirs()
+	
+			// modify the schema and set the simulator language
+			def xml = new XmlParser().parse(screenshotsSchemeFile)
+			def commandLineArguments = xml.LaunchAction[0].CommandLineArguments[0]
+			if (commandLineArguments != null) {
+				def parent = commandLineArguments.parent()
+				parent.remove(commandLineArguments)
+			}
+			commandLineArguments = new Node(xml.LaunchAction[0], 'CommandLineArguments')
+			new Node(commandLineArguments, 'CommandLineArgument', [argument:"-AppleLanguages", isEnabled:"YES"])
+			new Node(commandLineArguments, 'CommandLineArgument', [argument:"(" + language + ")", isEnabled:"YES"])
+			
+
+			def environmentVariables = xml.LaunchAction[0].EnvironmentVariables[0]
+			if (environmentVariables != null) {
+				def parent = environmentVariables.parent()
+				parent.remove(environmentVariables)
+			}
+			
+			environmentVariables = new Node(xml.LaunchAction[0], 'EnvironmentVariables')
+			new Node(environmentVariables, 'EnvironmentVariable', [key:"OUTPUT_PATH", value:screenshotsOutputPath.absolutePath, isEnabled:"YES"])
+			
+			new XmlNodePrinter(new PrintWriter(new FileWriter(screenshotsSchemeFile))).print(xml)
+		}
+	}
+}
+
+
+
+task takeScreenshots {
+	description 'Runs the unit tests that create the screenshots in all specified simulators and languges'
+	
+	screenshotsLanguages.each { language ->
+		dependsOn "simulatorScreenshots-$language"
+	}
+	
+	doLast {
+		generateHTML.execute()
+	}
+	
+}
+
+
+task downloadFancyBox {
+	doFirst {
+		
+		def version = '2.1.5'
+		def fancyboxArchiveName = 'v' + version + ".zip"
+		def destinationPath = new File(screenshotsOutputPath, 'html')
+		def fancyboxName = 'fancybox-' + version
+		
+		ant.get(src: 'https://github.com/fancyapps/fancyBox/archive/' + fancyboxArchiveName, dest: screenshotsOutputPath, verbose:true)
+		ant.unzip(src: new File(screenshotsOutputPath, fancyboxArchiveName), dest: screenshotsOutputPath)
+		
+		destinationPath.mkdirs()
+		
+	  ant.copy(todir: destinationPath) {
+			fileset(dir: new File(screenshotsOutputPath, fancyboxName)) {
+				include(name: 'lib/**')
+			}
+		}
+	  ant.copy(todir: new File(destinationPath, "/fancybox")) {
+			fileset(dir: new File(screenshotsOutputPath, fancyboxName + "/source")) {
+			}
+		}
+
+		ant.delete(file: new File(screenshotsOutputPath, fancyboxArchiveName))
+		ant.delete(dir: new File(screenshotsOutputPath, fancyboxName))			 
+		
+	}
+}
+
+import com.github.mustachejava.DefaultMustacheFactory;
+import com.github.mustachejava.Mustache;
+import com.github.mustachejava.MustacheFactory;
+import com.github.mustachejava.reflect.ReflectionObjectHandler;
+import groovy.transform.ToString
+
+@ToString(includeNames=true)
+class Language {
+	String language
+	List<Simulators> entries
+	
+	Language(String language, List<Simulators> entries) {
+		this.language = language;
+		this.entries = entries;
+	}
+}
+
+@ToString(includeNames=true)
+class Simulators {
+	String simulator
+	List<String> screenshots
+	
+	Simulators(String simulator, List<String> screenshots) {
+		this.simulator = simulator
+		this.screenshots = screenshots
+	}
+	
+}
+
+task generateHTML(dependsOn:'downloadFancyBox') << {
+	def languages = []
+	
+	new File(screenshotsOutputPath, "html").mkdirs()
+	
+	screenshotsLanguages.each { language ->
+		def simulators = []
+		new File(screenshotsOutputPath, language).eachFile { file ->
+			def screenshots = []
+			file.eachFile { shot -> 
+				String relative = screenshotsOutputPath.toURI().relativize(shot.toURI()).getPath();
+				screenshots << relative
+			}
+			simulators << new Simulators(file.name, screenshots)
+		
+		}
+		languages << new Language(language, simulators)
+	}
+	//println languages;
+
+	def data = [data: languages]
+	//println screenshotsMap["data"].entrySet()
+
+	File template = new File(buildscript.sourceFile.parent, "index.template")
+
+  //Writer writer = new OutputStreamWriter(System.out);
+	Writer writer = new FileWriter(new File(screenshotsOutputPath, "html/index.html"));
+	MustacheFactory mf = new DefaultMustacheFactory();
+	mf.setObjectHandler(new ReflectionObjectHandler() {
+	  @Override
+	  protected boolean areMethodsAccessible(Map<?, ?> map) {
+	    return true;
+	  }
+	}); 
+  Mustache mustache = mf.compile(template.absolutePath);
+  mustache.execute(writer, data);
+  writer.flush();
+}
+
+task foo << {
+	println new File(".").absolutePath
+}

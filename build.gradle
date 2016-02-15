@@ -1,19 +1,21 @@
-plugins {
-  id "org.openbakery.xcode-plugin" version "0.12.7"
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
+    classpath "gradle.plugin.org.openbakery:xcode-plugin:0.12.7"
+  }
 }
+apply plugin: org.openbakery.XcodePlugin
 
-
-apply from: "Core/Script/OBHotShots.gradle"
-
-
+apply from: "Core/Script/screenshots.gradle"
+screenshotsSchemeFile = "HotShots.xcodeproj/xcshareddata/xcschemes/Screenshots.xcscheme"
 screenshotsLanguages = ['de', 'en']
-println screenshotsLanguages
 
-// destination directory where the screenshots are stored
-//def screenshotsOutputPath = new File("build/screenshots")
 
-// the scheme that should be used for creating the screenshots
-def screenshotSchemeFile = "HotShots.xcodeproj/xcshareddata/xcschemes/Screenshots.xcscheme"
 
 
 xcodebuild {
