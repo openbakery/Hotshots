@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		355B2299A3EE894AA7FB7F22 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B259AA242F4AF8AC51295 /* FileHelper.m */; };
-		355B27684F02AD1C48A47CC8 /* ImageColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B2D4AB0BF5F200B44FBDD /* ImageColorHelper.m */; };
-		355B2C9F474F6961CEE88178 /* Screenshot_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B2E2D1EB652728CFC3659 /* Screenshot_iPhone.m */; };
-		355B2D52F82B029629996882 /* OBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B22E156369C001ED777E1 /* OBColor.m */; };
-		A719CE691AFBACE9005F59E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A719CE681AFBACE9005F59E8 /* main.m */; };
-		A719CE6C1AFBACE9005F59E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A719CE6B1AFBACE9005F59E8 /* AppDelegate.m */; };
-		A719CE6F1AFBACE9005F59E8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A719CE6E1AFBACE9005F59E8 /* FirstViewController.m */; };
-		A719CE721AFBACE9005F59E8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A719CE711AFBACE9005F59E8 /* SecondViewController.m */; };
-		A719CE751AFBACE9005F59E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A719CE731AFBACE9005F59E8 /* Main.storyboard */; };
-		A719CE771AFBACE9005F59E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A719CE761AFBACE9005F59E8 /* Images.xcassets */; };
-		A719CE7A1AFBACE9005F59E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A719CE781AFBACE9005F59E8 /* LaunchScreen.xib */; };
-		A719CE861AFBACEA005F59E8 /* HotShotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A719CE851AFBACEA005F59E8 /* HotShotsTests.m */; };
-		A719CE981AFBAD05005F59E8 /* Screenshot_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = A719CE971AFBAD05005F59E8 /* Screenshot_iPad.m */; };
-		A76E58341AFBAF8F00B32B10 /* BaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B291CCBEF30DBC836D814 /* BaseTestCase.m */; };
+		355B213521073DD4F8DDB53F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B20F0A23398DFF7F7D334 /* main.m */; };
+		355B2221A10782E35FDCFA40 /* OBFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B27C74B1075DBF86AB0A9 /* OBFileHelper.m */; };
+		355B23005DD8FB517AA25E54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 355B2D33C26B3333D5DB995D /* Images.xcassets */; };
+		355B2349C2C4F987BFD56B70 /* OBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B2556EAC72FAE3C243D7A /* OBColor.m */; };
+		355B24EC5500FC55683B20AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355B2346C91BC0DACE6F4095 /* LaunchScreen.xib */; };
+		355B24F3C7A08CFC3D0900B9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B2D054AE8E0061DD672EB /* SecondViewController.m */; };
+		355B27CA28D26859D8F594FB /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B24A11519F2F524D2898C /* FirstViewController.m */; };
+		355B280C477A78986E5D1FEC /* OBImageColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B24B7ACD37263A8D364F2 /* OBImageColorHelper.m */; };
+		355B2A7D8E9F476AEFC40CF0 /* OBBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B296C8D6F4B5EFE98C673 /* OBBaseTestCase.m */; };
+		355B2AA24BC5533E3F09459E /* Screenshot_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B23872977C0567D24DD81 /* Screenshot_iPhone.m */; };
+		355B2AA8D27AD26DC0E088CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355B2461CDCC6966EAB33779 /* Main.storyboard */; };
+		355B2B66783E3081AA378510 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 355B259109966C9D7C4961BE /* LaunchScreen.strings */; };
+		355B2C26A252A4BA9F130D1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B2492994280077357912F /* AppDelegate.m */; };
+		355B2E5056EF0BAE281311A6 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 355B266DDC82D2CD15F6D35D /* Main.strings */; };
+		355B2ED271B901625FDB9902 /* Screenshot_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 355B2B025AFBD1D074103054 /* Screenshot_iPad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,35 +42,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		355B22E156369C001ED777E1 /* OBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBColor.m; sourceTree = "<group>"; };
-		355B2448E15A297BF6CE0398 /* OBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBColor.h; sourceTree = "<group>"; };
-		355B259AA242F4AF8AC51295 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
-		355B26FB03153D42F8E27040 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
-		355B27C026B9237F74BD6074 /* ImageColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageColorHelper.h; sourceTree = "<group>"; };
-		355B291CCBEF30DBC836D814 /* BaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTestCase.m; sourceTree = "<group>"; };
-		355B29C3A14912B02B4310B6 /* BaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTestCase.h; sourceTree = "<group>"; };
-		355B2D4AB0BF5F200B44FBDD /* ImageColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageColorHelper.m; sourceTree = "<group>"; };
-		355B2E2D1EB652728CFC3659 /* Screenshot_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screenshot_iPhone.m; sourceTree = "<group>"; };
+		355B20F0A23398DFF7F7D334 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		355B22290F8CBD5413CA3862 /* build.gradle */ = {isa = PBXFileReference; lastKnownFileType = file.gradle; path = build.gradle; sourceTree = "<group>"; };
+		355B23872977C0567D24DD81 /* Screenshot_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screenshot_iPhone.m; sourceTree = "<group>"; };
+		355B2492994280077357912F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		355B24A11519F2F524D2898C /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		355B24B7ACD37263A8D364F2 /* OBImageColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBImageColorHelper.m; sourceTree = "<group>"; };
+		355B2556EAC72FAE3C243D7A /* OBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBColor.m; sourceTree = "<group>"; };
+		355B25E1E5706BBFE87FCD21 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		355B26B8589CCAFFC063E325 /* OBHotShots.gradle */ = {isa = PBXFileReference; lastKnownFileType = file.gradle; path = OBHotShots.gradle; sourceTree = "<group>"; };
+		355B27A07281F0996466F54A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		355B27C74B1075DBF86AB0A9 /* OBFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBFileHelper.m; sourceTree = "<group>"; };
+		355B285AEC12F5AE6F34AEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = HotShots/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		355B2869DAB48D6502E4F09A /* OBFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBFileHelper.h; sourceTree = "<group>"; };
+		355B296C8D6F4B5EFE98C673 /* OBBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBBaseTestCase.m; sourceTree = "<group>"; };
+		355B2987FF59B901653508A3 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = HotShots/de.lproj/Main.strings; sourceTree = SOURCE_ROOT; };
+		355B29BE1AFB9B801E8C2715 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		355B2A1205EFEE7963A8BAD9 /* OBBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBBaseTestCase.h; sourceTree = "<group>"; };
+		355B2B025AFBD1D074103054 /* Screenshot_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screenshot_iPad.m; sourceTree = "<group>"; };
+		355B2D054AE8E0061DD672EB /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		355B2D07DA0B2443DCD1CF49 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		355B2D33C26B3333D5DB995D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		355B2F0402B0CB9F1EBC95A1 /* OBImageColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBImageColorHelper.h; sourceTree = "<group>"; };
+		355B2F478B72729F437F24FD /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		355B2F509C900D5F75D8BDBE /* OBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBColor.h; sourceTree = "<group>"; };
+		355B2F5A46BB3FAD34FDF195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HotShots/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		355B2F859F6D755EAF3B975C /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = HotShots/de.lproj/LaunchScreen.strings; sourceTree = SOURCE_ROOT; };
 		A719CE631AFBACE9005F59E8 /* HotShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A719CE671AFBACE9005F59E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A719CE681AFBACE9005F59E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A719CE6A1AFBACE9005F59E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A719CE6B1AFBACE9005F59E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A719CE6D1AFBACE9005F59E8 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A719CE6E1AFBACE9005F59E8 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		A719CE701AFBACE9005F59E8 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A719CE711AFBACE9005F59E8 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		A719CE741AFBACE9005F59E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A719CE761AFBACE9005F59E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A719CE791AFBACE9005F59E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A719CE7F1AFBACEA005F59E8 /* HotShotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotShotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A719CE841AFBACEA005F59E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A719CE851AFBACEA005F59E8 /* HotShotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotShotsTests.m; sourceTree = "<group>"; };
 		A719CE931AFBAD05005F59E8 /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A719CE961AFBAD05005F59E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A719CE971AFBAD05005F59E8 /* Screenshot_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Screenshot_iPad.m; sourceTree = "<group>"; };
-		A7630D9A1AFC9FBF000C0652 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		A7630D9B1AFC9FBF000C0652 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,26 +98,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		355B2AB0649ED0352AC1079D /* Helpers */ = {
+		355B20A7EC2BA383CD251C5A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				355B22E156369C001ED777E1 /* OBColor.m */,
-				355B2448E15A297BF6CE0398 /* OBColor.h */,
-				355B27C026B9237F74BD6074 /* ImageColorHelper.h */,
-				355B2D4AB0BF5F200B44FBDD /* ImageColorHelper.m */,
-				355B259AA242F4AF8AC51295 /* FileHelper.m */,
-				355B26FB03153D42F8E27040 /* FileHelper.h */,
+				355B23872977C0567D24DD81 /* Screenshot_iPhone.m */,
+				355B2B025AFBD1D074103054 /* Screenshot_iPad.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		355B21C123B13B3288309BC9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				355B25E1E5706BBFE87FCD21 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		355B229008F634D37817AC24 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				355B2CF1541CBB6FC41FED2E /* Source */,
+				355B2DD035B38DB6D58991D9 /* Script */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		355B26D2FDB9EB7450BEF20D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				355B20F0A23398DFF7F7D334 /* main.m */,
+				355B2F478B72729F437F24FD /* FirstViewController.h */,
+				355B24A11519F2F524D2898C /* FirstViewController.m */,
+				355B2492994280077357912F /* AppDelegate.m */,
+				355B29BE1AFB9B801E8C2715 /* AppDelegate.h */,
+				355B2D054AE8E0061DD672EB /* SecondViewController.m */,
+				355B2D07DA0B2443DCD1CF49 /* SecondViewController.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		355B27EE96C3355F9E47A416 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				355B2556EAC72FAE3C243D7A /* OBColor.m */,
+				355B2F509C900D5F75D8BDBE /* OBColor.h */,
+				355B2F0402B0CB9F1EBC95A1 /* OBImageColorHelper.h */,
+				355B24B7ACD37263A8D364F2 /* OBImageColorHelper.m */,
+				355B27C74B1075DBF86AB0A9 /* OBFileHelper.m */,
+				355B2869DAB48D6502E4F09A /* OBFileHelper.h */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		355B2A4C5E632EE59687B6DD /* DemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				355B26D2FDB9EB7450BEF20D /* Source */,
+				355B2E66DDED864E5039C6CA /* Resource */,
+			);
+			path = DemoApp;
+			sourceTree = "<group>";
+		};
+		355B2CF1541CBB6FC41FED2E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				355B27EE96C3355F9E47A416 /* Helpers */,
+				355B296C8D6F4B5EFE98C673 /* OBBaseTestCase.m */,
+				355B2A1205EFEE7963A8BAD9 /* OBBaseTestCase.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		355B2DD035B38DB6D58991D9 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				355B26B8589CCAFFC063E325 /* OBHotShots.gradle */,
+			);
+			path = Script;
+			sourceTree = "<group>";
+		};
+		355B2E66DDED864E5039C6CA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				355B27A07281F0996466F54A /* Info.plist */,
+				355B2D33C26B3333D5DB995D /* Images.xcassets */,
+				355B2346C91BC0DACE6F4095 /* LaunchScreen.xib */,
+				355B266DDC82D2CD15F6D35D /* Main.strings */,
+				355B2461CDCC6966EAB33779 /* Main.storyboard */,
+				355B259109966C9D7C4961BE /* LaunchScreen.strings */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		A719CE5A1AFBACE9005F59E8 = {
 			isa = PBXGroup;
 			children = (
-				A719CE651AFBACE9005F59E8 /* HotShots */,
-				A719CE821AFBACEA005F59E8 /* HotShotsTests */,
 				A719CE941AFBAD05005F59E8 /* Screenshots */,
 				A719CE641AFBACE9005F59E8 /* Products */,
+				355B229008F634D37817AC24 /* Core */,
+				355B2A4C5E632EE59687B6DD /* DemoApp */,
+				355B22290F8CBD5413CA3862 /* build.gradle */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,68 +212,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A719CE651AFBACE9005F59E8 /* HotShots */ = {
-			isa = PBXGroup;
-			children = (
-				A719CE6A1AFBACE9005F59E8 /* AppDelegate.h */,
-				A719CE6B1AFBACE9005F59E8 /* AppDelegate.m */,
-				A719CE6D1AFBACE9005F59E8 /* FirstViewController.h */,
-				A719CE6E1AFBACE9005F59E8 /* FirstViewController.m */,
-				A719CE701AFBACE9005F59E8 /* SecondViewController.h */,
-				A719CE711AFBACE9005F59E8 /* SecondViewController.m */,
-				A719CE731AFBACE9005F59E8 /* Main.storyboard */,
-				A719CE761AFBACE9005F59E8 /* Images.xcassets */,
-				A719CE781AFBACE9005F59E8 /* LaunchScreen.xib */,
-				A719CE661AFBACE9005F59E8 /* Supporting Files */,
-			);
-			path = HotShots;
-			sourceTree = "<group>";
-		};
-		A719CE661AFBACE9005F59E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A719CE671AFBACE9005F59E8 /* Info.plist */,
-				A719CE681AFBACE9005F59E8 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A719CE821AFBACEA005F59E8 /* HotShotsTests */ = {
-			isa = PBXGroup;
-			children = (
-				A719CE851AFBACEA005F59E8 /* HotShotsTests.m */,
-				A719CE831AFBACEA005F59E8 /* Supporting Files */,
-			);
-			path = HotShotsTests;
-			sourceTree = "<group>";
-		};
-		A719CE831AFBACEA005F59E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A719CE841AFBACEA005F59E8 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		A719CE941AFBAD05005F59E8 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				A719CE971AFBAD05005F59E8 /* Screenshot_iPad.m */,
-				A719CE951AFBAD05005F59E8 /* Supporting Files */,
-				355B291CCBEF30DBC836D814 /* BaseTestCase.m */,
-				355B29C3A14912B02B4310B6 /* BaseTestCase.h */,
-				355B2AB0649ED0352AC1079D /* Helpers */,
-				355B2E2D1EB652728CFC3659 /* Screenshot_iPhone.m */,
+				355B20A7EC2BA383CD251C5A /* Source */,
+				355B21C123B13B3288309BC9 /* Resource */,
 			);
 			path = Screenshots;
-			sourceTree = "<group>";
-		};
-		A719CE951AFBAD05005F59E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A719CE961AFBAD05005F59E8 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,9 +324,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A719CE751AFBACE9005F59E8 /* Main.storyboard in Resources */,
-				A719CE7A1AFBACE9005F59E8 /* LaunchScreen.xib in Resources */,
-				A719CE771AFBACE9005F59E8 /* Images.xcassets in Resources */,
+				355B23005DD8FB517AA25E54 /* Images.xcassets in Resources */,
+				355B24EC5500FC55683B20AD /* LaunchScreen.xib in Resources */,
+				355B2E5056EF0BAE281311A6 /* Main.strings in Resources */,
+				355B2AA8D27AD26DC0E088CC /* Main.storyboard in Resources */,
+				355B2B66783E3081AA378510 /* LaunchScreen.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,10 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A719CE721AFBACE9005F59E8 /* SecondViewController.m in Sources */,
-				A719CE6C1AFBACE9005F59E8 /* AppDelegate.m in Sources */,
-				A719CE6F1AFBACE9005F59E8 /* FirstViewController.m in Sources */,
-				A719CE691AFBACE9005F59E8 /* main.m in Sources */,
+				355B213521073DD4F8DDB53F /* main.m in Sources */,
+				355B27CA28D26859D8F594FB /* FirstViewController.m in Sources */,
+				355B2C26A252A4BA9F130D1C /* AppDelegate.m in Sources */,
+				355B24F3C7A08CFC3D0900B9 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A719CE861AFBACEA005F59E8 /* HotShotsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A719CE981AFBAD05005F59E8 /* Screenshot_iPad.m in Sources */,
-				355B2D52F82B029629996882 /* OBColor.m in Sources */,
-				355B27684F02AD1C48A47CC8 /* ImageColorHelper.m in Sources */,
-				355B2299A3EE894AA7FB7F22 /* FileHelper.m in Sources */,
-				A76E58341AFBAF8F00B32B10 /* BaseTestCase.m in Sources */,
-				355B2C9F474F6961CEE88178 /* Screenshot_iPhone.m in Sources */,
+				355B2349C2C4F987BFD56B70 /* OBColor.m in Sources */,
+				355B280C477A78986E5D1FEC /* OBImageColorHelper.m in Sources */,
+				355B2221A10782E35FDCFA40 /* OBFileHelper.m in Sources */,
+				355B2A7D8E9F476AEFC40CF0 /* OBBaseTestCase.m in Sources */,
+				355B2AA24BC5533E3F09459E /* Screenshot_iPhone.m in Sources */,
+				355B2ED271B901625FDB9902 /* Screenshot_iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,22 +396,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A719CE731AFBACE9005F59E8 /* Main.storyboard */ = {
+		355B2346C91BC0DACE6F4095 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A719CE741AFBACE9005F59E8 /* Base */,
-				A7630D9A1AFC9FBF000C0652 /* de */,
+				355B285AEC12F5AE6F34AEF9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		355B2461CDCC6966EAB33779 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				355B2F5A46BB3FAD34FDF195 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A719CE781AFBACE9005F59E8 /* LaunchScreen.xib */ = {
+		355B259109966C9D7C4961BE /* LaunchScreen.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A719CE791AFBACE9005F59E8 /* Base */,
-				A7630D9B1AFC9FBF000C0652 /* de */,
+				355B2F859F6D755EAF3B975C /* de */,
 			);
-			name = LaunchScreen.xib;
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		355B266DDC82D2CD15F6D35D /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				355B2987FF59B901653508A3 /* de */,
+			);
+			name = Main.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -471,7 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HotShots/Info.plist;
+				INFOPLIST_FILE = DemoApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -481,7 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HotShots/Info.plist;
+				INFOPLIST_FILE = DemoApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -499,7 +541,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = HotShotsTests/Info.plist;
+				INFOPLIST_FILE = Screenshots/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotShots.app/HotShots";
@@ -514,7 +556,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = HotShotsTests/Info.plist;
+				INFOPLIST_FILE = Screenshots/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotShots.app/HotShots";

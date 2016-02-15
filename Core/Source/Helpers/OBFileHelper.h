@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface FileHelper : NSObject
+@interface OBFileHelper : NSObject
 
 
 

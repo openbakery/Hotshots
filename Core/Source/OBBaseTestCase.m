@@ -7,12 +7,12 @@
 //
 
 
-#import "BaseTestCase.h"
-#import "ImageColorHelper.h"
-#import "FileHelper.h"
+#import "OBBaseTestCase.h"
+#import "OBImageColorHelper.h"
+#import "OBFileHelper.h"
 
 
-@implementation BaseTestCase {
+@implementation OBBaseTestCase {
 	NSFileManager *_fileManager;
 }
 
@@ -78,7 +78,7 @@
 	for (int i=0; i<5; i++) {
 		// make sure that the image is not black
 		image = [self screenshotImage];
-		if (![ImageColorHelper hasSingleColor:image]) {
+		if (![OBImageColorHelper hasSingleColor:image]) {
 			// we have more then one color so the screenshot must be good!
 			break;
 		}
@@ -127,7 +127,7 @@
 	[_fileManager createDirectoryAtPath:destinationPath withIntermediateDirectories:YES attributes:nil error:nil];
 
 
-	NSString *uniqueFilename = [FileHelper uniqueFileNameForFile:filename atDestinationPath:destinationPath];
+	NSString *uniqueFilename = [OBFileHelper uniqueFileNameForFile:filename atDestinationPath:destinationPath];
 	NSString *imagePath = [destinationPath stringByAppendingPathComponent:uniqueFilename];
 
 	NSData *data = UIImagePNGRepresentation(image);

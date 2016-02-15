@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "BaseTestCase.h"
+#import "OBBaseTestCase.h"
 
 
 static const double waitTime = 1.0;
 
 
-@interface Screenshot_iPad : BaseTestCase
+@interface Screenshot_iPad : OBBaseTestCase
 
 @end
 

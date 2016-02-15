@@ -2,11 +2,11 @@
 // Created by Rene Pirringer on 22.01.15.
 //
 
-#import "ImageColorHelper.h"
+#import "OBImageColorHelper.h"
 #import "OBColor.h"
 
 
-@implementation ImageColorHelper {
+@implementation OBImageColorHelper {
 
 }
 

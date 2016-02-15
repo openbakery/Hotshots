@@ -1,0 +1,5 @@
+.idea
+.gradle
+build
+HotShots.xcodeproj/xcuserdata
+HotShots.xcodeproj/project.xcworkspace

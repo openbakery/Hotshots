@@ -6,10 +6,10 @@
 
 
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "FileHelper.h"
+#import "OBFileHelper.h"
 
 
-@implementation FileHelper
+@implementation OBFileHelper
 {
 
 }

@@ -1,0 +1,79 @@
+buildscript {
+	repositories {
+		maven {
+			url('http://repository.openbakery.org/')
+		}
+		mavenCentral()
+  }
+
+	dependencies {
+	    classpath "org.openbakery:xcode-plugin:0.12.+"
+	}
+}
+
+ext {
+  screenshotsLanguages = ['en']
+  screenshotsSchemeFile = null
+  screenshotsOutputPath = new File("build/screenshots")
+}
+
+// destination directory where the screenshots are stored
+if (!project.hasProperty("screenshotsSchemeFile")) {
+  logger.error("You need to define the screenshotsSchemeFile property")
+}
+
+
+// this modifieds the scheme and adds the language parameter so that the simulator starts using the proper language
+screenshotsLanguages.each { language ->
+	task "simulatorScreenshots-$language" (type: org.openbakery.XcodeTestTask) {
+  
+    xcodebuild {
+      scheme = { org.apache.commons.io.FilenameUtils.getBaseName(screenshotsSchemeFile) }
+			destination = [ 'iPad Pro', 'iPad Retina', 'iPhone 4s', 'iPhone 5s', 'iPhone 6', 'iPhone 6 Plus' ]
+    }
+	
+		doFirst { 
+	   	println "Create Screenshots for $screenshotsLanguage"
+	   	println "Store screenshots into $screeshostsOutputPath"
+			
+			screenshotsOutputPath.mkdirs()
+	
+			// modify the schema and set the simulator language
+			def xml = new XmlParser().parse(screenshotsSchemeFile)
+			def commandLineArguments = xml.LaunchAction[0].CommandLineArguments[0]
+			if (commandLineArguments != null) {
+				def parent = commandLineArguments.parent()
+				parent.remove(commandLineArguments)
+			}
+			commandLineArguments = new Node(xml.LaunchAction[0], 'CommandLineArguments')
+			new Node(commandLineArguments, 'CommandLineArgument', [argument:"-AppleLanguages", isEnabled:"YES"])
+			new Node(commandLineArguments, 'CommandLineArgument', [argument:"(" + language + ")", isEnabled:"YES"])
+			
+
+			def environmentVariables = xml.LaunchAction[0].EnvironmentVariables[0]
+			if (environmentVariables != null) {
+				def parent = environmentVariables.parent()
+				parent.remove(environmentVariables)
+			}
+			
+			environmentVariables = new Node(xml.LaunchAction[0], 'EnvironmentVariables')
+			new Node(environmentVariables, 'EnvironmentVariable', [key:"OUTPUT_PATH", value:screenshotsOutputPath.absolutePath, isEnabled:"YES"])
+			
+			new XmlNodePrinter(new PrintWriter(new FileWriter(screenshotsSchemeFile))).print(xml)
+		}
+	}
+}
+
+
+
+task takeScreenshots {
+	description 'Runs the unit tests that create the screenshots in all specified simulators and languges'
+	
+	screenshotsLanguages.each { language ->
+		dependsOn "simulatorScreenshots-$language"
+	}
+	
+	doFirst {
+		println "Creating all screenshots"
+	}
+}

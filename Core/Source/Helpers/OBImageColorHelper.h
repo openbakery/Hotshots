@@ -6,7 +6,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ImageColorHelper : NSObject
+@interface OBImageColorHelper : NSObject
 
 + (BOOL)hasSingleColor:(UIImage *)image;
 + (NSArray *)colorsForImage:(UIImage *)image;

@@ -12,7 +12,7 @@
 #import <XCTest/XCTest.h>
 
 
-@interface BaseTestCase : XCTestCase
+@interface OBBaseTestCase : XCTestCase
 
 - (NSString *)screenshotWithName:(NSString *)name;
 
