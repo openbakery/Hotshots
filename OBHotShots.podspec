@@ -12,6 +12,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 	
 	spec.default_subspecs = 'Default'
+	spec.framework    = 'XCTest'
 
 	spec.subspec 'Default' do |ss|
 		ss.source_files = 'Core/Source/*.{h,m}', 'Core/Source/Helpers/*.{h,m}'
