@@ -5,8 +5,8 @@ buildscript {
     }
   }
   dependencies {
-		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
     classpath "gradle.plugin.org.openbakery:xcode-plugin:0.12.7"
+		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
   }
 }
 
@@ -32,7 +32,6 @@ System.setProperty('org.gradle.color.error', 'RED')
 // this modifieds the scheme and adds the language parameter so that the simulator starts using the proper language
 screenshotsLanguages.each { language ->
 	task "simulatorScreenshots-$language" (type: org.openbakery.XcodeTestTask) {
-
 
 		doFirst { 
 	    xcodebuild {
@@ -186,8 +185,4 @@ task generateHTML(dependsOn:'downloadFancyBox') << {
   Mustache mustache = mf.compile(template.absolutePath);
   mustache.execute(writer, data);
   writer.flush();
-}
-
-task foo << {
-	println new File(".").absolutePath
 }

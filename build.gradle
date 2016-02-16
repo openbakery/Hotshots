@@ -5,16 +5,16 @@ buildscript {
     }
   }
   dependencies {
-		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
     classpath "gradle.plugin.org.openbakery:xcode-plugin:0.12.7"
+		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
   }
 }
-apply plugin: org.openbakery.XcodePlugin
+apply plugin: "org.openbakery.xcode-plugin"
 
 apply from: "Core/Script/screenshots.gradle"
+
 screenshotsSchemeFile = "HotShots.xcodeproj/xcshareddata/xcschemes/Screenshots.xcscheme"
 screenshotsLanguages = ['de', 'en']
-
 
 
 
@@ -22,8 +22,4 @@ xcodebuild {
 	version = "7" // use xcode version 7.+. This parameter is only needed if multiple xcodes are installed on your machine, otherwise this parameter is not needed
 	target = 'HotShots'
 }
-
-
-
-
 
