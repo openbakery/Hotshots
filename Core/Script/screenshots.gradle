@@ -28,6 +28,10 @@ import static org.gradle.logging.StyledTextOutput.Style;
 
 System.setProperty('org.gradle.color.error', 'RED')
 
+xcodebuild {
+	destination = [ 'iPad Pro', 'iPad Retina', 'iPhone 4s', 'iPhone 5s', 'iPhone 6', 'iPhone 6 Plus' ]
+}
+
 
 // this modifieds the scheme and adds the language parameter so that the simulator starts using the proper language
 screenshotsLanguages.each { language ->
@@ -36,7 +40,6 @@ screenshotsLanguages.each { language ->
 		doFirst { 
 	    xcodebuild {
 	      scheme = org.apache.commons.io.FilenameUtils.getBaseName(screenshotsSchemeFile) 
-				destination = [ 'iPad Pro', 'iPad Retina', 'iPhone 4s', 'iPhone 5s', 'iPhone 6', 'iPhone 6 Plus' ]
 			}
 			
 			if (screenshotsSchemeFile == null) {
