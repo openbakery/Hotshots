@@ -14,8 +14,7 @@ Pod::Spec.new do |spec|
 	spec.default_subspecs = 'Default'
 
 	spec.subspec 'Default' do |ss|
-		ss.source_files = 'Core/Source/*.{h,m}'
-		ss.source_files = 'Core/Source/Helpers/*.{h,m}'
+		ss.source_files = 'Core/Source/*.{h,m}', 'Core/Source/Helpers/*.{h,m}'
 		ss.dependency 'OBHotShots/Script'
   end
 
