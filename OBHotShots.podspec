@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.social_media_url = 'https://twitter.com/rpirringer'
   spec.source       = { :git => "https://github.com/openbakery/Hotshots.git", :tag => spec.version.to_s }
   spec.platform = :ios
-  spec.ios.deployment_target = '8.0'
+  spec.ios.deployment_target = '6.0'
   spec.license      = 'BSD'
   spec.requires_arc = true
 	
