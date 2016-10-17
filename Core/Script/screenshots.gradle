@@ -5,7 +5,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.org.openbakery:xcode-plugin:0.12.7"
+    classpath "gradle.plugin.org.openbakery:xcode-plugin:0.14.2"
 		classpath "com.github.spullara.mustache.java:compiler:0.8.18"
   }
 }
@@ -22,11 +22,6 @@ if (!project.hasProperty('screenshotsSchemeFile')) {
 	ext.screenshotsSchemeFile = null
 }
 
-import org.gradle.logging.StyledTextOutput;
-import org.gradle.logging.StyledTextOutputFactory;
-import static org.gradle.logging.StyledTextOutput.Style;
-
-System.setProperty('org.gradle.color.error', 'RED')
 
 
 // this modifieds the scheme and adds the language parameter so that the simulator starts using the proper language
@@ -36,7 +31,7 @@ screenshotsLanguages.each { language ->
 		doFirst { 
 	    xcodebuild {
 	      scheme = org.apache.commons.io.FilenameUtils.getBaseName(screenshotsSchemeFile) 
-				destination = [ 'iPad Pro', 'iPad Retina', 'iPhone 4s', 'iPhone 5s', 'iPhone 6', 'iPhone 6 Plus' ]
+				destination = [ 'iPad Pro (12.9 inch)', 'iPad Retina', 'iPhone 5s', 'iPhone 7', 'iPhone 7 Plus' ]
 			}
 			
 			if (screenshotsSchemeFile == null) {

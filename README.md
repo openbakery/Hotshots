@@ -11,7 +11,7 @@ Requirements:
 To generate the screenshots just execute:
 
 ```
-./gradlew allScreenshots
+./gradlew  takeScreenshots
 ```
 
 With this command the project is compiled and the unit tests are executed and the screenshots are captured. The generated screenshots can be foudn in the `build/screenshots` directory. You should find screenshots in the english and german language, and also for the following devices: 
