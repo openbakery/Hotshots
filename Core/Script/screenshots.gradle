@@ -24,7 +24,7 @@ if (!project.hasProperty('screenshotsSchemeFile')) {
 
 
 xcodebuild {
-    destination = [ 'iPad Pro (12.9 inch)', 'iPad Retina', 'iPhone 5s', 'iPhone 7', 'iPhone 7 Plus' ]
+    destination = [ 'iPad Pro (12.9 inch)', 'iPad Retina', 'iPhone 5s', 'iPhone 6', 'iPhone 6 Plus' ]
 
 }
 
