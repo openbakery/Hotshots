@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'OBHotShots'
-  spec.version      = '1.0.0'
+  spec.version      = '1.1.0'
   spec.summary      = "Some helper class for creating app screenshots using normal unit tests that can be used for the AppStore"
   spec.homepage     = "https://github.com/openbakery/HotShots"
   spec.author       = { "René Pirringer" => "rene@openbakery.org" }
