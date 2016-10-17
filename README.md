@@ -16,9 +16,8 @@ To generate the screenshots just execute:
 
 With this command the project is compiled and the unit tests are executed and the screenshots are captured. The generated screenshots can be foudn in the `build/screenshots` directory. You should find screenshots in the english and german language, and also for the following devices: 
 
-* iPad 
-* iPad Pro
-* iPhone 3.5inch
+* iPad Retina
+* iPad Pro (12.9 inch)
 * iPhone 4inch
 * iPhone 4.7inch
 * iPhone 5.5inch
